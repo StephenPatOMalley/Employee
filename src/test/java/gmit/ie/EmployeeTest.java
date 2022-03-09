@@ -2,24 +2,32 @@ package gmit.ie;
 
 import org.junit.jupiter.api.Test;
 
-public class EmployeeTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class EmployeeTest{
 
     @Test
-    public class EmployeeStart(){
-        Employee employee = new employee("Stephen", "567534");
-
+    public void EmployeeTestName(){
+        Employee employee = new Employee("Stephen", "567534");
+        assertEquals(employee.empName, new Employee("Stephen", "5675344").empName);
     }
 
     @Test
-    public class EmployeeInvalidName(){
-        Employee employee = new employee("Ste", "567534");
-
+    public void EmployeeTestNumber(){
+        Employee employee = new Employee("Stephen", "567534");
+        assertEquals(employee.empNumber, new Employee("Stephenw", "567534").empNumber);
+    }
+    /*
+    @Test
+    public void  EmployeeTestInvalidName(){
+        Employee employee = new Employee("Ste", "567534");
+        assertEquals(employee.empName, (new IndexOutOfBoundsException("Employee Name to Short")));
     }
 
     @Test
-    public class EmployeeInvalidNumber(){
-        Employee employee = new employee("Stephen", "567");
-
+    public void  EmployeeTestInvalidNumber(){
+        Employee employee = new Employee("Stephen", "567");
+        assertEquals(employee.empNumber, (new IndexOutOfBoundsException("Employee Number to Short")));
     }
-
+    */
 }
